@@ -3,6 +3,7 @@ import pandas as pd
 import csv
 from datetime import datetime
 from keboola_streamlit import KeboolaStreamlit
+import os
 
 # Initialize Keboola connection
 try:
@@ -24,6 +25,10 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+current_working_directory = os.getcwd()
+
+st.info(f"Current working directory: {current_working_directory}")
 
 # Load books data
 books = pd.read_csv('in/tables/books.csv')
@@ -91,6 +96,8 @@ st.markdown('<p style="text-align: center; font-size: 1.2rem; color: #666;">Crea
 
 # Create tabs for different functionalities
 tab1, tab2 = st.tabs(["📝 Create Story", "📖 Read Stories"])
+
+
 
 with tab1:
     # Single column layout from top to bottom
