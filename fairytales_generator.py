@@ -26,12 +26,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-current_working_directory = os.getcwd()
 
-st.info(f"Current working directory: {current_working_directory}")
-
-# Load books data
-books = pd.read_csv('in/tables/books.csv')
+books = pd.read_csv('/data/in/tables/books.csv')
 
 # Function to create selectbox data for books
 def create_book_selectbox_data(books_df):
