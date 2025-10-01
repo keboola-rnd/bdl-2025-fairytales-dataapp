@@ -198,7 +198,7 @@ with tab2:
                 st.error("❌ Keboola connection not available. Please check your configuration.")
             else:
                 # Read the latest fairytale from the specified table
-                df = keboola.read_table("out.c-fairytale-ai-pipeline.story")
+                df = keboola.read_table("out.c-crewai-runner.story")
                 
                 if df is not None and not df.empty:
                     # Get the latest fairytale (assuming there's a timestamp or we take the last row)
@@ -210,7 +210,7 @@ with tab2:
                     
                     # Check if 'fairytale' column exists
                     if 'fairytale' in latest_fairytale:
-                        fairytale_text = latest_fairytale['fairytale']
+                        fairytale_text = latest_fairytale['story']
                         
                         # Display the fairytale in a nice format
                         st.markdown(f"""
