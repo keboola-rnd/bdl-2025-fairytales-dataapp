@@ -209,7 +209,7 @@ with tab2:
                     st.markdown("---")
                     
                     # Check if 'fairytale' column exists
-                    if 'fairytale' in latest_fairytale:
+                    if 'story' in latest_fairytale:
                         fairytale_text = latest_fairytale['story']
                         
                         # Display the fairytale in a nice format
